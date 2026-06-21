@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export function useAsync<T>(loader: () => Promise<T>, fallback: T) {
+export function useAsync<T>(loader: () => Promise<T>, fallback: T, refreshKey = 0) {
   const [data, setData] = useState<T>(fallback)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -21,7 +21,7 @@ export function useAsync<T>(loader: () => Promise<T>, fallback: T) {
     return () => {
       active = false
     }
-  }, [loader])
+  }, [loader, refreshKey])
 
   return { data, loading, error }
 }

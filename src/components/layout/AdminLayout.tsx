@@ -4,10 +4,9 @@ import { authController } from '../../controllers/authController'
 
 const adminLinks = [
   ['/admin/dashboard', 'Dashboard'],
-  ['/admin/recuerdos', 'Recuerdos'],
-  ['/admin/ensenanzas', 'Ensenanzas'],
+  ['/admin/recuerdos', 'Libro · Recuerdos'],
+  ['/admin/ensenanzas', 'Árbol · Hojas'],
   ['/admin/mensajes', 'Mensajes'],
-  ['/admin/media', 'Media'],
   ['/admin/usuarios', 'Usuarios'],
   ['/admin/configuracion', 'Configuracion'],
   ['/admin/comandos', 'Comandos'],
@@ -18,8 +17,8 @@ export function AdminLayout({ title, children }: { title: string; children: Reac
   const location = useLocation()
   const navigate = useNavigate()
 
-  function handleLogout() {
-    authController.logout()
+  async function handleLogout() {
+    await authController.logout()
     navigate('/terminal')
   }
 

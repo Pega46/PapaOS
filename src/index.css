@@ -1491,7 +1491,19 @@ label { display: grid; gap: 0.45rem; color: var(--muted); }
 .metric-grid article { padding: 1rem; }
 .metric-grid span { color: var(--line); font: 800 2.2rem/1 var(--mono); }
 .admin-panel { padding: 1.2rem; }
+.admin-panel-gap { margin-top: 1rem; }
 .admin-row { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--line-soft); }
+.admin-row > span:first-child { display: grid; gap: 0.2rem; }
+.admin-row small { color: var(--muted); }
+.admin-actions { display: flex !important; gap: 0.5rem; flex-wrap: wrap; }
+.admin-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin-top: 1rem; }
+.admin-form label { display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.86rem; }
+.admin-form input, .admin-form textarea, .admin-form select, .admin-user-row select { width: 100%; border: 1px solid var(--line-soft); border-radius: 6px; background: rgba(3, 15, 27, 0.72); color: var(--text); padding: 0.7rem; font: inherit; }
+.admin-form textarea { resize: vertical; }
+.admin-form-wide { grid-column: 1 / -1; }
+.admin-form .primary-button { width: fit-content; }
+.admin-user-row { align-items: center; }
+.admin-user-row select { min-width: 150px; }
 .settings-list { display: grid; gap: 1rem; }
 
 @media (max-width: 780px) {
@@ -1521,6 +1533,10 @@ label { display: grid; gap: 0.45rem; color: var(--muted); }
   .topnav { width: 100%; overflow-x: auto; }
   .book-view, .tree-view, .admin-shell, .collab-form { grid-template-columns: 1fr; }
   .book-media { min-height: 260px; }
+  .admin-form { grid-template-columns: 1fr; }
+  .admin-form-wide { grid-column: auto; }
+  .admin-row { align-items: flex-start; flex-direction: column; }
+  .admin-user-row select { min-width: 0; }
   .admin-sidebar { border-right: 0; border-bottom: 1px solid var(--line-soft); }
 }
 
